@@ -7,8 +7,8 @@
 #define VIAL_UNLOCK_COMBO_COLS { 0, 11 }
 
 #define VIAL_ENCODER_DEFAULT { \
-    KC_VOLD, KC_VOLU,       KC_UP, KC_DOWN, \
-    KC_TRNS, KC_TRNS,       KC_LEFT, KC_RIGHT, \
+    KC_VOLD, KC_VOLU,       KC_LEFT, KC_RIGHT, \
+    KC_TRNS, KC_TRNS,       KC_UP, KC_DOWN, \
     KC_TRNS, KC_TRNS,       KC_TRNS, KC_TRNS, \
     KC_TRNS, KC_TRNS,       KC_TRNS, KC_TRNS \
 }
