@@ -19,7 +19,12 @@
 #define RAW_EPSIZE 32
 
 enum deej_keycodes {
+    // Use custom keycodes if via is enabled
+#ifdef VIA_ENABLE
     DEEJ_VD = USER00,
+#else
+    DEEJ_VD = SAFE_RANGE,
+#endif
     DEEJ_VU,
     DEEJ_MASTER,
     DEEJ_SPOTIFY,
@@ -46,9 +51,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
+// Store deej data
 uint16_t currentSlider = MASTER;
 uint16_t deejVolumes[SLIDER_COUNT];
 
+
+// Receive current slider status from deej
 void raw_hid_receive_kb(uint8_t *data, uint8_t length) {
     if (data[0] == 0x03 && data[1] == 0xFF) {
         uint8_t slider = data[2];
@@ -59,7 +67,7 @@ void raw_hid_receive_kb(uint8_t *data, uint8_t length) {
 }
 
 /**
- * void raw_hid_send(uint8_t *data, uint8_t length);
+ * Send data packet with slider number and slider value to deej
  */
 void send_deejData(void) {
     uint8_t data[RAW_EPSIZE];
@@ -70,6 +78,7 @@ void send_deejData(void) {
     raw_hid_send(data, sizeof(data));
 }
 
+// Send volume up to deej
 void deej_volu(void) {
     if (deejVolumes[currentSlider] + 5 < 100) {
         deejVolumes[currentSlider] += 5;
@@ -79,6 +88,7 @@ void deej_volu(void) {
     send_deejData();
 }
 
+// Send volume down to deej
 void deej_vold(void) {
     if (deejVolumes[currentSlider] >= 5) {
         deejVolumes[currentSlider] -= 5;
@@ -88,6 +98,7 @@ void deej_vold(void) {
     send_deejData();
 }
 
+// Process custom keycodes
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch(keycode) {
         case DEEJ_VU:
@@ -114,14 +125,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-// void encoder_update_user(uint8_t index, bool clockwise) {
-//     if (index == 0) {
-//         if (clockwise) {
-//             // tap_code(KC_VOLU);
-//             deej_volu();
-//         } else {
-//             // tap_code(KC_VOLD);
-//             deej_vold();
-//         }
-//     }
-// }
+// If vial is not enabled, define encoder behavior
+#ifndef VIAL_ENABLE
+    void encoder_update_user(uint8_t index, bool clockwise) {
+        if (index == 0) {
+            if (clockwise) {
+                deej_volu();
+            } else {
+                deej_vold();
+            }
+        }
+    }
+#endif
