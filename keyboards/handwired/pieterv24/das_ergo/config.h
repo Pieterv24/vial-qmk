@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID   0x78A1
 #define DEVICE_VER   0x0001
 #define MANUFACTURER Pieterv24
-#define PRODUCT      void_ergo
+#define PRODUCT      das_ergo
 
 /* key matrix size */
 #define MATRIX_ROWS 8
