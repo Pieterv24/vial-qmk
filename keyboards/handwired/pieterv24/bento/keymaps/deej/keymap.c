@@ -53,49 +53,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Store deej data
 uint16_t currentSlider = MASTER;
-uint16_t deejVolumes[SLIDER_COUNT];
-
-
-// Receive current slider status from deej
-void raw_hid_receive_kb(uint8_t *data, uint8_t length) {
-    if (data[0] == 0x03 && data[1] == 0xFF) {
-        uint8_t slider = data[2];
-        uint16_t volume = data[3] << 8 | data[4];
-
-        deejVolumes[slider] = volume;
-    }
-}
 
 /**
  * Send data packet with slider number and slider value to deej
  */
-void send_deejData(void) {
+void send_deejData(bool down) {
     uint8_t data[RAW_EPSIZE];
     data[0] = 0xFD;
     data[1] = currentSlider;
-    data[2] = (deejVolumes[currentSlider] >> 8) & 0xFF;
-    data[3] = deejVolumes[currentSlider] & 0xFF;
+    data[2] = down ? 0x00 : 0x01;
     raw_hid_send(data, sizeof(data));
 }
 
 // Send volume up to deej
 void deej_volu(void) {
-    if (deejVolumes[currentSlider] + 5 < 100) {
-        deejVolumes[currentSlider] += 5;
-    } else {
-        deejVolumes[currentSlider] = 100;
-    }
-    send_deejData();
+    send_deejData(false);
 }
 
 // Send volume down to deej
 void deej_vold(void) {
-    if (deejVolumes[currentSlider] >= 5) {
-        deejVolumes[currentSlider] -= 5;
-    } else {
-        deejVolumes[currentSlider] = 0;
-    }
-    send_deejData();
+    send_deejData(true);
 }
 
 // Process custom keycodes
