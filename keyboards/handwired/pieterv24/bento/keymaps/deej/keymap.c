@@ -43,7 +43,7 @@ enum deej_sliders {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
         DEEJ_MASTER, DEEJ_MIC, _______,
-        DEEJ_SPOTIFY, DEEJ_GAME, _______
+        DEEJ_SPOTIFY, DEEJ_GAME, KC_MPLY
     ),
     [1] = LAYOUT(
         _______, _______, _______,

@@ -20,8 +20,6 @@
 #define RAW_USAGE_ID 0x61
 
 #ifdef VIAL_ENABLE
-    #define VIAL_KEYBOARD_UID {0x45, 0x23, 0x99, 0x87, 0xCC, 0x99, 0x8F, 0x1D}
-
     #define VIAL_ENCODER_DEFAULT { \
         USER00, USER01, \
         KC_TRNS, KC_TRNS, \
