@@ -24,19 +24,11 @@ enum deej_keycodes {
     NEW_SAFE_RANGE
 };
 
-enum deej_sliders {
-    MASTER,
-    SPOTIFY,
-    GAME,
-    MIC,
-    SLIDER_COUNT
-};
-
 void send_deejData(bool down);
-bool process_record_user(uint16_t keycode, keyrecord_t *record);
+bool process_record_deej(uint16_t keycode, keyrecord_t *record);
 void deej_volu(void);
 void deej_vold(void);
 
 #ifndef VIAL_ENABLE
-void encoder_update_user(uint8_t index, bool clockwise);
+void encoder_update_deej(uint8_t index, bool clockwise);
 #endif

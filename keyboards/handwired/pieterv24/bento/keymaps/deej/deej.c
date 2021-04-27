@@ -18,6 +18,14 @@
 #include QMK_KEYBOARD_H
 #include "raw_hid.h"
 
+enum deej_sliders {
+    MASTER,
+    SPOTIFY,
+    GAME,
+    MIC,
+    SLIDER_COUNT
+};
+
 // Store deej data
 uint16_t currentSlider = MASTER;
 
@@ -33,28 +41,30 @@ void send_deejData(bool down) {
 }
 
 // Process custom keycodes
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch(keycode) {
-        case DEEJ_VU:
-            deej_volu();
-            break;
-        case DEEJ_VD:
-            deej_vold();
-            break;
-        case DEEJ_MASTER:
-            currentSlider = MASTER;
-            break;
-        case DEEJ_MIC:
-            currentSlider = MIC;
-            break;
-        case DEEJ_SPOTIFY:
-            currentSlider = SPOTIFY;
-            break;
-        case DEEJ_GAME:
-            currentSlider = GAME;
-            break;
-        default:
-            return true;
+bool process_record_deej(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        switch(keycode) {
+            case DEEJ_VU:
+                deej_volu();
+                break;
+            case DEEJ_VD:
+                deej_vold();
+                break;
+            case DEEJ_MASTER:
+                currentSlider = MASTER;
+                break;
+            case DEEJ_MIC:
+                currentSlider = MIC;
+                break;
+            case DEEJ_SPOTIFY:
+                currentSlider = SPOTIFY;
+                break;
+            case DEEJ_GAME:
+                currentSlider = GAME;
+                break;
+            default:
+                return true;
+        }
     }
     return true;
 }
@@ -71,7 +81,7 @@ void deej_vold(void) {
 
 // If vial is not enabled, define encoder behavior
 #ifndef VIAL_ENABLE
-    void encoder_update_user(uint8_t index, bool clockwise) {
+    void encoder_update_deej(uint8_t index, bool clockwise) {
         if (index == 0) {
             if (clockwise) {
                 deej_volu();
