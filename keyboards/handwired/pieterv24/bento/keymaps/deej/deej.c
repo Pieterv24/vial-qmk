@@ -22,8 +22,7 @@ enum deej_sliders {
     MASTER,
     SPOTIFY,
     GAME,
-    MIC,
-    SLIDER_COUNT
+    MIC
 };
 
 // Store deej data
