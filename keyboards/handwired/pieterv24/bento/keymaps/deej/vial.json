@@ -7,6 +7,38 @@
       "rows": 1,
       "cols": 6
   },
+  "customKeycodes": [
+    {
+      "name": "Deej Volume down",
+      "title": "Send volume down signal to deej",
+      "shortName": "DeejVol-"
+    },
+    {
+        "name": "Deej Volume up",
+        "title": "Send volume up signal to deej",
+        "shortName": "DeejVol+"
+    },
+    {
+        "name": "Deej select slider 1",
+        "title": "Select slider 1 in deej",
+        "shortName": "DeejSl1"
+    },
+    {
+        "name": "Deej select slider 2",
+        "title": "Select slider 2 in deej",
+        "shortName": "DeejSl2"
+    },
+    {
+        "name": "Deej select slider 3",
+        "title": "Select slider 3 in deej",
+        "shortName": "DeejSl3"
+    },
+    {
+        "name": "Deej select slider 4",
+        "title": "Select slider 4 in deej",
+        "shortName": "DeejSl4"
+    }
+  ],
   "layouts": {
       "keymap": [
         [{"x":1.5},"0,0\n\n\n\n\n\n\n\n\ne","0,1\n\n\n\n\n\n\n\n\ne"],
