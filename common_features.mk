@@ -456,8 +456,8 @@ ifeq ($(strip $(VIAL_ENABLE)), yes)
 
 $(QUANTUM_DIR)/vial.c: $(KEYMAP_OUTPUT)/vial_generated_keyboard_definition.h
 
-$(KEYMAP_OUTPUT)/vial_generated_keyboard_definition.h: $(KEYMAP_PATH)/vial.json
-	python3 util/vial_generate_definition.py $(KEYMAP_PATH)/vial.json $(KEYMAP_OUTPUT)/vial_generated_keyboard_definition.h
+$(KEYMAP_OUTPUT)/vial_generated_keyboard_definition.h:
+	python3 util/vial_generate_definition.py $(KEYBOARD_PATHS) $(KEYMAP_PATH) $(KEYMAP_OUTPUT)/vial_generated_keyboard_definition.h
 endif
 
 ifeq ($(strip $(VIAL_INSECURE)), yes)
