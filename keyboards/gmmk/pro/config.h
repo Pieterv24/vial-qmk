@@ -1,4 +1,4 @@
-/* Copyright 2021 Harry Herring, Ivan Organista
+/* Copyright 2021 Glorious, LLC <salman@pcgamingrace.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,47 +19,35 @@
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0x726F
-#define PRODUCT_ID      0x0002
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    Polarity Works
-#define PRODUCT         CRBN
+#define VENDOR_ID       0x320F
+#define PRODUCT_ID      0x5044
+#define MANUFACTURER    Glorious
+#define PRODUCT         GMMK Pro
 
 /* key matrix size */
-#define MATRIX_ROWS 4
-#define MATRIX_COLS 12
+#define MATRIX_ROWS 11
+#define MATRIX_COLS 8
 
-/* key matrix pins */
-#define MATRIX_ROW_PINS { B3, B1, F7, F6 }
-#define MATRIX_COL_PINS { D3, D2, D1, D0, D4, C6, D7, E6, B4, B5, B6, B2 }
-#define UNUSED_PINS
+#define MATRIX_ROW_PINS  { B0, B1, B2, B3, B4, B5, B6, B7, B8, B9, B10 }
+#define MATRIX_COL_PINS  { A0, A1, A2, A3, A4, A8, A9, A10 }
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
-/*Rotary Encoder Pins*/
-#define ENCODERS_PAD_A { F5 }
-#define ENCODERS_PAD_B { F4 }
+#define BOOTMAGIC_LITE_ROW 1
+#define BOOTMAGIC_LITE_COLUMN 3
 
-/*Sets the number of pulses per increment*/
-#define ENCODER_RESOLUTION 2
-
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
+#define TAP_CODE_DELAY 10
+#define ENCODERS_PAD_A { C15 }
+#define ENCODERS_PAD_B { C14 }
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
-
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-/* VIAL Keyboard UID */
-#define VIAL_KEYBOARD_UID {0xC1, 0x9B, 0x8E, 0x7B, 0x43, 0xD7, 0x61, 0xEE}
-
-/* VIAL Unlock combo keys */
-#define VIAL_UNLOCK_COMBO_ROWS { 0, 2 }
-#define VIAL_UNLOCK_COMBO_COLS { 0, 11 }
-
-/* Encoder default values and delay */
-#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
-#define VIAL_ENCODER_KEYCODE_DELAY 10
+#define VIAL_KEYBOARD_UID {0x81, 0xD2, 0x8A, 0x89, 0x17, 0x36, 0x53, 0x4B}
+#define VIAL_UNLOCK_COMBO_ROWS { 1, 10 }
+#define VIAL_UNLOCK_COMBO_COLS { 3, 4 }
+#define VIAL_ENCODER_KEYCODE_DELAY 25
