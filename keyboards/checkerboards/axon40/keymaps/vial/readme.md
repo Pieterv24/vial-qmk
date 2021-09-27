@@ -1,1 +1,0 @@
-# The VIAL default layout
