@@ -20,10 +20,15 @@
 #define VIAL_UNLOCK_COMBO_ROWS { 0, 0 }
 #define VIAL_UNLOCK_COMBO_COLS { 0, 14 }
 
+#define VIAL_KEY_OVERRIDE_ENTRIES 4
+#define VIAL_COMBO_ENTRIES 4
+
 // Uncomment to enable Frambuffer and keypress effects
 // #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 // #define RGB_MATRIX_KEYPRESSES
 
+#undef RGB_MATRIX_STARTUP_MODE
+#define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_SOLID_COLOR
 // Undefine RGB Effects since I only use solid (This saves space)
 // Remove the #undef lines to get them back
 #undef ENABLE_RGB_MATRIX_ALPHAS_MODS
@@ -69,3 +74,6 @@
 #undef ENABLE_RGB_MATRIX_MULTISPLASH
 #undef ENABLE_RGB_MATRIX_SOLID_SPLASH
 #undef ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
+
+#undef ENABLE_RGB_MATRIX_CYCLE_ALL
+#undef ENABLE_RGB_MATRIX_PIXEL_FRACTAL

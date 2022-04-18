@@ -2,7 +2,6 @@
   "name": "KBD67 Rev2",
   "vendorId": "0x4B42",
   "productId": "0x6067",
-  "lighting": "qmk_backlight_rgblight",
   "matrix": {
     "rows": 5,
     "cols": 16

@@ -8,7 +8,7 @@ BOOTLOADER = caterina
 # Build Options
 #   change yes to no to disable
 #
-BOOTMAGIC_ENABLE = lite     # Virtual DIP switch configuration
+BOOTMAGIC_ENABLE = yes     # Virtual DIP switch configuration
 MOUSEKEY_ENABLE = yes       # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
 CONSOLE_ENABLE = no         # Console for debug
@@ -24,4 +24,4 @@ AUDIO_ENABLE = no           # Audio output
 ENCODER_ENABLE = yes
 
 # Use on proton-c
-CONVERT_TO_PROTON_C=yes
+# CONVERT_TO_PROTON_C=yes
