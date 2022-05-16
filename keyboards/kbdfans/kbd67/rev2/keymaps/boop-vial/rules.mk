@@ -1,0 +1,8 @@
+LTO_ENABLE = yes
+VIA_ENABLE = yes
+VIAL_ENABLE = yes
+
+
+
+BACKLIGHT_ENABLE = no
+RGBLIGHT_ENABLE = no

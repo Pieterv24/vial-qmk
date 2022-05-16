@@ -1,0 +1,17 @@
+#define VIAL_KEYBOARD_UID {0x42, 0x4E, 0xE3, 0x95, 0xCF, 0xEF, 0x8B, 0xB3}
+
+#undef VENDOR_ID
+#undef PRODUCT_ID
+#undef DEVICE_VER
+#undef PRODUCT
+
+#define VENDOR_ID       0x4B42
+#define PRODUCT_ID      0x1001
+#define DEVICE_VER      0x0001
+#define PRODUCT BOOP65 SOLDERED
+
+#define VIAL_UNLOCK_COMBO_ROWS { 0, 0 }
+#define VIAL_UNLOCK_COMBO_COLS { 0, 15}
+
+#define VIAL_TAP_DANCE_ENTRIES 4
+#define VIAL_COMBO_ENTRIES 4
