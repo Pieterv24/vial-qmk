@@ -4,6 +4,9 @@
     "productId": "0x6869",
     "lighting": "none",
     "matrix": {"rows": 5, "cols": 15},
+    "customKeycodes": [
+        {"name": "Idiot Type", "title": "Idiot Type Toggle", "shortName": "Idiot Type"}
+    ],
     "layouts": {
       "labels": [
         "ISO Enter",
