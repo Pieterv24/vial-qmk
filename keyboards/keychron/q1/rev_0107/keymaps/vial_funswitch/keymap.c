@@ -137,7 +137,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;  // Skip all further processing of this key
         case KC_A ... KC_Z:
-            if (idiot_type && record->event.pressed) {
+            if (idiot_type && record->event.pressed && !(get_mods() & MOD_MASK_CSAG) && !(get_oneshot_mods() & MOD_MASK_CSAG) ) {
                 if (idiot_type_shift) {
                     tap_code16(S(keycode));
                     idiot_type_shift = !idiot_type_shift;
@@ -148,11 +148,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return true;
         case KC_SPC:
-            isCapital = false;
+            idiot_type_shift = false;
             return true;
 
         case KC_BSPC:
-            isCapital = false;
+            idiot_type_shift = false;
             return true;
 
         default:
