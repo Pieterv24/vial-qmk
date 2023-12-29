@@ -1,0 +1,7 @@
+VIA_ENABLE = yes
+VIAL_ENABLE = yes
+VIAL_ENCODERS_ENABLE = yes
+
+RAW_ENABLE = yes
+
+SRC += deej.c
