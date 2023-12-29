@@ -28,8 +28,7 @@
 #define LAYOUT( \
     KA1, KA2, EN1, \
     KB1, KB2, KB3 \
-) \
-{ \
+) { \
     { \
         KA1, KA2, EN1, \
         KB1, KB2, KB3 \

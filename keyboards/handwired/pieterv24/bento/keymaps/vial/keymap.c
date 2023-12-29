@@ -13,29 +13,29 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#include QMK_KEYBOARD_H
 
-#pragma once
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [0] = LAYOUT(
+        _______, _______, MO(1),
+        _______, _______, _______
+    ),
+    [1] = LAYOUT(
+        _______, _______, _______,
+        _______, _______, _______
+    ),
+    [2] = LAYOUT(
+        _______, _______, _______,
+        _______, _______, _______
+    ),
+    [3] = LAYOUT(
+        _______, _______, _______,
+        _______, _______, _______
+    ),
+};
 
-#include "config_common.h"
-
-/* USB Device descriptor parameter */
-#define VENDOR_ID       0x23F2
-#define PRODUCT_ID      0x78E3
-#define DEVICE_VER      0x0100
-#define MANUFACTURER    Pieterv24
-#define PRODUCT         Bento
-
-/* key matrix size */
-#define MATRIX_ROWS 1
-#define MATRIX_COLS 6
-
-#define DIODE_DIRECTION COL2ROW
-
-#define MATRIX_COL_PINS { D7, B1, D2, E6, B4, B2 }
-#define MATRIX_ROW_PINS { D3 }
-
-#define ENCODERS_PAD_A { D0 }
-#define ENCODERS_PAD_B { D1 }
-
-/* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCE 5
+#ifndef VIAL_ENABLE
+    bool encoder_update_user(uint8_t index, bool clockwise) {
+        return false;
+    }
+#endif

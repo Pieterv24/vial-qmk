@@ -13,8 +13,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #pragma once
 
+#define VIAL_KEYBOARD_UID {0xA0, 0xF8, 0x6E, 0xF7, 0xC7, 0x48, 0xFB, 0x33}
+
+#define VIAL_UNLOCK_COMBO_ROWS { 0 }
+#define VIAL_UNLOCK_COMBO_COLS { 0 }
+
 #ifdef VIAL_ENABLE
-    #define VIAL_KEYBOARD_UID {0x55, 0xEF, 0xA1, 0xDE, 0xD3, 0x84, 0xD5, 0x6D}
+    #define VIAL_ENCODER_DEFAULT { \
+        KC_TRNS, KC_TRNS, \
+        KC_TRNS, KC_TRNS, \
+        KC_TRNS, KC_TRNS, \
+        KC_TRNS, KC_TRNS \
+    }
 #endif

@@ -17,22 +17,28 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-        KC_LEFT, KC_RIGHT, KC_A,
-        KC_UP, KC_DOWN, MO(1)
+        _______, _______, MO(1),
+        _______, _______, _______
     ),
     [1] = LAYOUT(
         _______, _______, _______,
         _______, _______, _______
     ),
+    [2] = LAYOUT(
+        _______, _______, _______,
+        _______, _______, _______
+    ),
+    [3] = LAYOUT(
+        _______, _______, _______,
+        _______, _______, _______
+    ),
 };
 
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        if (clockwise) {
-            tap_code(KC_VOLU);
-        } else {
-            tap_code(KC_VOLD);
-        }
-    }
-    return false;
-}
+#ifdef ENCODER_MAP_ENABLE
+const uint16_t PROGMEM encoder_map[][1][2] = {
+    [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
+    [1] = { ENCODER_CCW_CW(_______, _______) },
+    [2] = { ENCODER_CCW_CW(_______, _______) },
+    [3] = { ENCODER_CCW_CW(_______, _______) },
+};
+#endif
