@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define VIAL_KEYBOARD_UID {0x00, 0x91, 0x93, 0xFA, 0x69, 0x83, 0x84, 0x4D}
+#define VIAL_KEYBOARD_UID {0x35, 0x3C, 0xB2, 0xC6, 0x22, 0xFC, 0xF4, 0xE6}
 
 #define VIAL_UNLOCK_COMBO_ROWS { 0, 0 }
 #define VIAL_UNLOCK_COMBO_COLS { 0, 16 }

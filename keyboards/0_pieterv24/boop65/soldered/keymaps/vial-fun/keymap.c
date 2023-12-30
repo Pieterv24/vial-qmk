@@ -2,9 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include QMK_KEYBOARD_H
 
-enum custom_keycodes {
-    CK_STYP = QK_KB_0             // Stupid type toggle
-};
+#include "idiot_type.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [0] = LAYOUT_65_ansi_split_bs_2_right_mods(
@@ -36,42 +34,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS,                            KC_TRNS, KC_TRNS,                   KC_TRNS, KC_TRNS, KC_TRNS),
 };
 
-static bool funTypeMode = false;
-static bool isCapital = false;
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case CK_STYP:
-            if (!record->event.pressed) {
-                if (funTypeMode) {
-                    isCapital = false;
-                }
-                funTypeMode = !funTypeMode;
-            }
-            return false;
-
-        case KC_A ... KC_Z:
-            if (funTypeMode && record->event.pressed) {
-                if (isCapital) {
-                    tap_code16(S(keycode));
-                    isCapital = !isCapital;
-                    return false;
-                } else {
-                    isCapital = !isCapital;
-                }
-            }
-            return true;
-
-        case KC_SPC:
-            if (funTypeMode) {
-                isCapital = false;
-            }
-
-        case KC_BSPC:
-            if (funTypeMode) {
-                isCapital = false;
-            }
+    if (!process_record_idiot_type(keycode, record)) {
+        return false;
     }
-
     return true;
 }
