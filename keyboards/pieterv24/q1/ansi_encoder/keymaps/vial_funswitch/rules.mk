@@ -13,5 +13,5 @@ TAP_DANCE_ENABLE = no
 COMBO_ENABLE = no
 KEY_OVERRIDE_ENABLE = no
 
-VPATH += keyboards/0_pieterv24/common/keychron
+VPATH += keyboards/pieterv24/common/keychron
 SRC += keychron_common.c

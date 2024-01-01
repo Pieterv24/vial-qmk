@@ -2,8 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
-#include "action.h"
-#include "quantum_keycodes.h"
+#include QMK_KEYBOARD_H
 
 enum custom_keycodes {
     CK_STYP = QK_KB_0
