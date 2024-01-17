@@ -1,0 +1,17 @@
+{
+    "development_board": "promicro",
+    "matrix_pins": {
+        "cols": ["D7", "E6", "B4", "B5", "B2", "B6"],
+        "rows": ["D1", "D0", "D4", "C6"]
+    },
+    "diode_direction": "COL2ROW",
+    "encoder": {
+        "rotary": [
+            { "pin_a": "F4", "pin_b": "F5" },
+            { "pin_a": "F5", "pin_b": "F6" },
+            { "pin_a": "F6", "pin_b": "F7" },
+            { "pin_a": "F7", "pin_b": "B1" },
+            { "pin_a": "B1", "pin_b": "F4" }
+        ]
+    }
+}
