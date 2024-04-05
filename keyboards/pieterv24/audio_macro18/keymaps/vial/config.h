@@ -8,8 +8,3 @@
 
 #define VIAL_UNLOCK_COMBO_ROWS { 1, 1 }
 #define VIAL_UNLOCK_COMBO_COLS { 0, 5 }
-
-#define VIAL_ENCODER_DEFAULT { \
-    /* Layer 1 */   KC_A,   KC_B,       KC_C,   KC_D,       KC_E,   KC_F,       KC_G,   KC_H,       KC_I,   KC_J, \
-    /* Layer 2 */   KC_TRNS,KC_TRNS,    KC_TRNS,KC_TRNS,    KC_TRNS,KC_TRNS,    KC_TRNS,KC_TRNS,    KC_TRNS,KC_TRNS \
-}
