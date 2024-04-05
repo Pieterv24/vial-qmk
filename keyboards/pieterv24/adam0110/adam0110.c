@@ -1,7 +1,7 @@
 // Copyright 2023 FxStudio <FXS@fx-studio.cn>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#include "adam0110.h"
+#include "quantum.h"
 
 #ifdef RGB_MATRIX_ENABLE
 
