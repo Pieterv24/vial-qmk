@@ -1,4 +1,4 @@
-/* Copyright 2021 @ Keychron (https://www.keychron.com)
+/* Copyright 2023 @ Keychron (https://www.keychron.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,25 +14,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "quantum.h"
+#pragma once
 
-const matrix_row_t matrix_mask[] = {
-    0b0111111111111101,
-    0b0111111111111111,
-    0b0111111111111111,
-    0b0111111111111111,
-    0b0111111111111111,
-    0b0111111111111111,
-};
+/* RGB Matrix Configuration */
+#define DRIVER_1_LED_TOTAL 45
+#define DRIVER_2_LED_TOTAL 37
+#define RGB_MATRIX_LED_COUNT (DRIVER_1_LED_TOTAL + DRIVER_2_LED_TOTAL)
 
-#ifdef DIP_SWITCH_ENABLE
+/* Encoder Configuration */
+#define ENCODER_DEFAULT_POS 0x3
 
-bool dip_switch_update_kb(uint8_t index, bool active) {
-    if (!dip_switch_update_user(index, active)) { return false;}
-    if (index == 0) {
-        default_layer_set(1UL << (active ? 2 : 0));
-    }
-    return true;
-}
-
-#endif // DIP_SWITCH_ENABLE
+/* Enable caps-lock LED */
+#define CAPS_LOCK_LED_INDEX 45
