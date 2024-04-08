@@ -1,0 +1,3 @@
+#define QMK_VERSION_BYTE_1 2
+#define QMK_VERSION_BYTE_2 9
+#define QMK_VERSION_BYTE_3 24
