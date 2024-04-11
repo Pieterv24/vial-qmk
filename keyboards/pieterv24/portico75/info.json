@@ -1,29 +1,86 @@
 {
     "keyboard_name": "Portico75",
+    "maintainer": "TerryMathews",
     "manufacturer": "TKC",
     "url": "",
-    "maintainer": "TerryMathews",
+    "bootloader": "atmel-dfu",
+    "processor": "atmega32u4",
+    "build": {
+        "lto": true
+    },
     "usb": {
         "vid": "0x544B",
         "pid": "0x0011",
         "device_version": "0.0.1"
     },
-    "rgb_matrix": {
-        "driver": "is31fl3741"
+    "features": {
+        "bootmagic": true,
+        "mousekey": true,
+        "extrakey": true,
+        "console": false,
+        "command": false,
+        "nkro": true,
+        "backlight": false,
+        "rgblight": false,
+        "audio": false,
+        "rgb_matrix": true,
+        "encoder": true
     },
     "matrix_pins": {
         "cols": ["F4", "F5", "F6", "F7", "C7", "C6", "B6", "B5", "B4", "D7", "D6", "D4", "D5", "B3", "B7"],
         "rows": ["B0", "E6", "F0", "F1", "D3", "D2"]
     },
     "diode_direction": "COL2ROW",
+    "debounce": 3,
+    "rgb_matrix": {
+        "driver": "is31fl3741",
+        "led_process_limit": 20,
+        "led_flush_limit": 26,
+        "max_brightness": 200,
+        "animations": {
+            "alphas_mods": true,
+            "gradient_up_down": true,
+            "gradient_left_right": true,
+            "breathing": false,
+            "band_sat": false,
+            "band_val": false,
+            "band_pinwheel_sat": false,
+            "band_pinwheel_val": false,
+            "band_spiral_sat": false,
+            "band_spiral_val": false,
+            "cycle_all": false,
+            "cycle_left_right": false,
+            "cycle_up_down": false,
+            "rainbow_moving_chevron": true,
+            "cycle_out_in": true,
+            "cycle_out_in_dual": false,
+            "cycle_pinwheel": false,
+            "cycle_spiral": false,
+            "dual_beacon": false,
+            "rainbow_beacon": false,
+            "rainbow_pinwheels": false,
+            "raindrops": false,
+            "jellybean_raindrops": false,
+            "hue_breathing": false,
+            "hue_pendulum": false,
+            "hue_wave": false,
+            "pixel_rain": true,
+            "pixel_flow": false,
+            "pixel_fractal": true,
+            "typing_heatmap": false,
+            "digital_rain": true,
+            "splash": false,
+            "multisplash": true,
+            "solid_splash": false,
+            "solid_multisplash": false
+        },
+        "sleep": true
+    },
     "encoder": {
         "rotary": [
             {"pin_a": "B1", "pin_b": "B2", "resolution": 2}
         ]
     },
-    "processor": "atmega32u4",
-    "bootloader": "atmel-dfu",
-    "debounce": 3,
     "layouts": {
         "LAYOUT_75_ansi": {
             "layout": [
