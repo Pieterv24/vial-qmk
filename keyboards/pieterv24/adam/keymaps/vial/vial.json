@@ -1,12 +1,9 @@
 {
   "name": "Adam64",
-  "vendorId": "0x586A",
-  "productId": "0xB001",
+  "vendorId": "0x596A",
+  "productId": "0xB00B",
   "lighting": "vialrgb",
   "matrix": { "rows": 5, "cols": 14 },
-  "customKeycodes": [
-    {"name": "Toggle idiot type", "title": "Toggle idiot typing mode", "shortName": "Idiot Mode"}
-  ],
   "layouts": {
     "keymap": [
       [
