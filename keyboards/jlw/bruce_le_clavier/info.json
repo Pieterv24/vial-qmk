@@ -20,10 +20,15 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "encoder_map": true
+        "encoder": true
+    },
+    "bootmagic": {
+        "matrix": [4, 10]
     },
     "encoder": {
-        "rotary": [{"pin_a": "B12", "pin_b": "B13"}]
+        "rotary": [
+            {"pin_a": "B12", "pin_b": "B13"}
+        ]
     },
     "ws2812": {
         "pin": "B8"
