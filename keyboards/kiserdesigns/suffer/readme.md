@@ -1,6 +1,6 @@
 # Suffer (SVFFER)
 
-![Suffer Layouts](https://i.imgur.com/replaceme)
+![Suffer Layouts](https://i.imgur.com/fPsC2Uj.jpeg)
 
 *Suffer is a 12-18 key macropad inspired by the [masochist16 by Zicodia](https://github.com/Z1codia/masochist16), with a case designed by seirin_blu*
 * Keyboard Maintainer: [NCKiser](https://github.com/NCKiser)
