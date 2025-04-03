@@ -1,0 +1,40 @@
+{
+    "keyboard_name": "Bento",
+    "url": "",
+    "maintainer": "Pieterv24",
+    "manufacturer": "Pieterv24",
+    "tags": ["macropad", "encoder"],
+    "development_board": "promicro",
+    "usb": {
+        "vid": "0x23F2",
+        "pid": "0x78E3",
+        "device_version": "0.0.1"
+    },
+    "matrix_pins": {
+        "cols": ["D7", "B1", "D2", "E6", "B4", "B2"],
+        "rows": ["D3"]
+    },
+    "diode_direction": "COL2ROW",
+    "debounce": 5,
+    "bootmagic": {
+        "enabled": true,
+        "matrix": [0, 0]
+    },
+    "encoder": {
+        "rotary": [
+            { "pin_a": "D0", "pin_b": "D1" }
+        ]
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                { "matrix": [0,0], "x": 0, "y": 0 },
+                { "matrix": [0,1], "x": 1, "y": 0 },
+                { "matrix": [0,2], "x": 2, "y": 0, "label": "Encoder Button" },
+                { "matrix": [0,3], "x": 0, "y": 1 },
+                { "matrix": [0,4], "x": 1, "y": 1 },
+                { "matrix": [0,5], "x": 2, "y": 1 }
+            ]
+        }
+    }
+}
