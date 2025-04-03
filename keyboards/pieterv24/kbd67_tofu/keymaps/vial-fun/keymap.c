@@ -16,6 +16,8 @@
 
 #include QMK_KEYBOARD_H
 
+#include "idiot_type.h"
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap (Base Layer) Default Layer
    * ,----------------------------------------------------------------.
