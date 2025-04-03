@@ -33,10 +33,6 @@
     "diode_direction": "COL2ROW",
     "debounce": 3,
     "rgb_matrix": {
-        "driver": "is31fl3741",
-        "led_process_limit": 20,
-        "led_flush_limit": 26,
-        "max_brightness": 200,
         "animations": {
             "alphas_mods": true,
             "gradient_up_down": true,
@@ -74,6 +70,10 @@
             "solid_splash": false,
             "solid_multisplash": false
         },
+        "driver": "is31fl3741",
+        "led_flush_limit": 26,
+        "led_process_limit": 4,
+        "max_brightness": 200,
         "sleep": true
     },
     "encoder": {

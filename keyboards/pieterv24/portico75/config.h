@@ -17,18 +17,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#ifdef RGB_MATRIX_ENABLE
-#    define RGB_MATRIX_KEYPRESSES
+#define IS31FL3741_I2C_ADDRESS_1 IS31FL3741_I2C_ADDRESS_GND
 
-#    define DRIVER_ADDR_1 0b0110000
-#    define DRIVER_COUNT 1
-#    define DRIVER_1_LED_TOTAL 98
-#    define RGB_MATRIX_LED_COUNT DRIVER_1_LED_TOTAL
-#    define DRIVER_INDICATOR_LED_TOTAL 0
-#else
+#ifndef RGB_MATRIX_ENABLE
 // WT_RGB IS31FL3741 driver code
-#    define DRIVER_COUNT 1
-#    define RGB_MATRIX_LED_COUNT 98
+#    define IS31FL3741_LED_COUNT 98
 
 #    define RGB_BACKLIGHT_ENABLED 1
 
