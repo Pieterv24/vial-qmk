@@ -26,22 +26,22 @@ enum layer_names {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
-    [_BASE] = LAYOUT(
+    [_BASE] = LAYOUT_3_3(
         KC_F13,     KC_F14,     KC_F15,
         KC_F16,     KC_F17,     KC_F18,
         MO(_F1),    MO(_F2),    MO(_F3)
     ),
-    [_F1] = LAYOUT(
+    [_F1] = LAYOUT_3_3(
         KC_F19, KC_F20, KC_F21,
         KC_F22, KC_F23, KC_F24,
         _______,_______,_______
     ),
-    [_F2] = LAYOUT(
+    [_F2] = LAYOUT_3_3(
         _______,_______,_______,
         _______,_______,_______,
         _______,_______,_______
     ),
-    [_F3] = LAYOUT(
+    [_F3] = LAYOUT_3_3(
         _______,_______,_______,
         _______,_______,_______,
         _______,_______,_______

@@ -19,7 +19,7 @@
         "matrix": [0, 0]
     },
     "layouts": {
-      "LAYOUT": {
+      "LAYOUT_3_3": {
         "layout": [
           { "matrix": [0,0], "x":0, "y":0 },
           { "matrix": [0,1], "x":1, "y":0 },
